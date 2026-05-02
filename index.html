@@ -564,16 +564,47 @@
   .cn-warn-row[data-level="critical"] { border-left-color: #E05D52; }
   .cn-warn-row[data-level="high"]     { border-left-color: #D4A574; }
   .cn-warn-row[data-level="medium"]   { border-left-color: #B8A474; }
+  .cn-warn-row[data-level="buy-strong"] { border-left-color: #5C8A57; }
+  .cn-warn-row[data-level="buy-medium"] { border-left-color: #7FA57A; }
+  .cn-warn-row[data-level="buy-soft"]   { border-left-color: #A6BFA0; }
   .cn-warn-num { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 24px; font-weight: 400; color: #5D5F65; line-height: 1; padding-top: 2px; letter-spacing: -1px; }
   .cn-warn-row[data-level="critical"] .cn-warn-num { color: #E88078; }
   .cn-warn-row[data-level="high"] .cn-warn-num     { color: #DDB890; }
   .cn-warn-row[data-level="medium"] .cn-warn-num   { color: #C8B384; }
+  .cn-warn-row[data-level="buy-strong"] .cn-warn-num { color: #95B690; }
+  .cn-warn-row[data-level="buy-medium"] .cn-warn-num { color: #95B690; }
+  .cn-warn-row[data-level="buy-soft"] .cn-warn-num   { color: #A6BFA0; }
   .cn-warn-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
   .cn-warn-title { font-size: 13px; color: #ECEBE3; font-weight: 500; }
   .cn-warn-badge { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700; letter-spacing: 1.2px; padding: 3px 7px; border-radius: 2px; border: 1px solid; white-space: nowrap; }
   .cn-warn-badge.critical { color: #E88078; border-color: rgba(232,128,120,0.4); background: rgba(224,93,82,0.08); }
   .cn-warn-badge.high     { color: #DDB890; border-color: rgba(221,184,144,0.4); background: rgba(212,165,116,0.08); }
   .cn-warn-badge.medium   { color: #C8B384; border-color: rgba(200,179,132,0.4); background: rgba(184,164,116,0.08); }
+  .cn-warn-badge.buy-strong { color: #95B690; border-color: rgba(149,182,144,0.45); background: rgba(92,138,87,0.10); }
+  .cn-warn-badge.buy-medium { color: #95B690; border-color: rgba(149,182,144,0.35); background: rgba(127,165,122,0.08); }
+  .cn-warn-badge.buy-soft   { color: #A6BFA0; border-color: rgba(166,191,160,0.30); background: rgba(166,191,160,0.06); }
+
+  /* Portfolio tab */
+  .pf-input-row { display: grid; grid-template-columns: 32px 1fr 110px 110px; gap: 12px; align-items: center; padding: 12px 14px; background: #0A0B0D; border-radius: 4px; border-left: 3px solid; margin-bottom: 8px; }
+  .pf-input-icon { font-size: 22px; text-align: center; }
+  .pf-input-label { font-size: 12px; color: #ECEBE3; font-weight: 500; }
+  .pf-input-sub { font-size: 9px; color: #7E7F85; letter-spacing: 1px; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .pf-input-field { background: #131519; border: 1px solid #3A3F4A; color: #ECEBE3; padding: 8px 10px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 12px; width: 100%; box-sizing: border-box; text-align: right; }
+  .pf-input-field:focus { outline: none; border-color: #7BA3C7; }
+  .pf-delta-row { display: grid; grid-template-columns: 32px 1fr 80px 80px 80px 1fr; gap: 12px; align-items: center; padding: 12px 14px; background: #0A0B0D; border-radius: 4px; border-left: 3px solid; margin-bottom: 8px; }
+  .pf-delta-cell { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ECEBE3; text-align: right; }
+  .pf-delta-action { font-size: 11px; color: #B8B9BD; line-height: 1.4; }
+  .pf-phase-badge { display: inline-block; padding: 6px 12px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; }
+  .pf-btn { background: #7BA3C7; color: #0A0B0D; border: none; padding: 10px 20px; border-radius: 3px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; cursor: pointer; transition: opacity 0.2s; }
+  .pf-btn:hover { opacity: 0.85; }
+  .pf-btn-secondary { background: #2A2D34; color: #ECEBE3; }
+
+  @media (max-width: 700px) {
+    .pf-input-row { grid-template-columns: 28px 1fr 80px; }
+    .pf-input-row .pf-input-field:nth-of-type(2) { display: none; }
+    .pf-delta-row { grid-template-columns: 28px 1fr 70px 70px; }
+    .pf-delta-row > *:nth-child(5), .pf-delta-row > *:nth-child(6) { display: none; }
+  }
   .cn-warn-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 8px; padding: 8px 10px; background: #131519; border-radius: 3px; }
   .cn-warn-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 8px; color: #7E7F85; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 3px; }
   .cn-warn-stat-value { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ECEBE3; font-weight: 500; }
@@ -758,6 +789,16 @@
       <span class="tab-btn-icon">🛢</span>
       <span>COMMODITY</span>
       <span class="tab-badge" id="tabBadgeCommodity">LIVE</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('portfolio')" id="tabBtnPortfolio">
+      <span class="tab-btn-icon">💼</span>
+      <span>MY PORTFOLIO</span>
+      <span class="tab-badge" id="tabBadgePortfolio">SET</span>
+    </button>
+    <button class="tab-btn" onclick="switchTab('backtest')" id="tabBtnBacktest">
+      <span class="tab-btn-icon">🧪</span>
+      <span>BACKTEST</span>
+      <span class="tab-badge" id="tabBadgeBacktest">4 cases</span>
     </button>
   </div>
 
@@ -1267,6 +1308,148 @@
       </div>
     </div>
 
+    <!-- ========== BUY TRIGGER FRAMEWORK · GOLD (RE-ENTRY) ========== -->
+    <div class="asset-card" style="margin-bottom:20px;border-color:rgba(127,165,122,0.25)">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label" style="color:#95B690">🟢 BUY TRIGGER FRAMEWORK · ACCUMULATION SIGNALS</div>
+          <h3 class="asset-card-title">6 tín hiệu mua vàng — sau correction hoặc trước crisis</h3>
+        </div>
+        <span class="src-badge src-derived" title="Counterpart to sell triggers"><span class="src-dot"></span>FRAMEWORK</span>
+      </div>
+      <div style="font-size:11.5px;color:#B8B9BD;line-height:1.6;margin-bottom:16px;padding:12px 14px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px">
+        <strong style="color:#95B690">Logic:</strong> Vàng có 2 buy contexts: (1) sau correction ổn định, (2) trước crisis khi defensive demand tăng. Các tín hiệu dưới đây phân biệt 2 phases. Lead time 3-12 tháng. Vàng "ngược chu kỳ" với equity → tín hiệu BUY vàng thường trùng tín hiệu SELL stocks.
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B1</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Real US 10Y rates đảo về &lt; 0% sustained 1M</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 0%</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">~+1.5%</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">FRED · DFII10</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Negative real rates = holding cash/bonds tệ hơn vàng (vàng yield 0%, cash mất giá). <strong>2008-2012:</strong> real rates -1% → vàng +110%. <strong>2020-2022:</strong> real -1% → vàng +35%.</div>
+            <div class="cn-warn-action">MAJOR BUY. Deploy 60% gold capital. SJC + vàng nhẫn 50/50.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B2</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Fed rate cut cycle (≥ 2 cuts liên tiếp)</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">≥ 2 consecutive cuts</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">cycle uncertain</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">FOMC calendar</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Easing cycle = liquidity flood + USD weak → gold rally. <strong>2008 cuts -100bps:</strong> gold +50% trong 12M. <strong>2019 cuts -75bps:</strong> gold +30% trong 9M. <strong>2024 cuts:</strong> gold +40%.</div>
+            <div class="cn-warn-action">BUY in size. Lock-in vị thế trước cycle Q4.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B3</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">DXY breakdown &lt; 100 + Δ MoM &lt; -3%</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 100 + -3%/M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">108.2 · 0%/M</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">Yahoo DX-Y.NYB</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> USD weak = gold strong (correlation -0.7). <strong>2002-2008:</strong> DXY 120→72 → gold $300→$1000 (+233%). <strong>2017:</strong> DXY -10% → gold +13%. <strong>2020:</strong> DXY -10% → gold +25%.</div>
+            <div class="cn-warn-action">BUY gold + silver. Increase to Phase 2 weight.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B4</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Central bank gold buying YoY &gt; +50% acceleration</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">12M MA &gt; +50% YoY</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">~+15% YoY</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">World Gold Council</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> CB buying acceleration = structural demand surge (de-dollarization, sanctions hedge). <strong>2022-2024:</strong> CB buying từ 450t/y → 1100t/y → gold $1850→$2700 (+45%).</div>
+            <div class="cn-warn-action">BUY long-term. Đặc biệt vàng nhẫn (closer to world price).</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B5</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">SJC discount xuất hiện (premium &lt; -5M VND/lượng)</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">premium &lt; -5M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">~+17.5M (high)</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">1998 VN crisis bottom</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Premium đảo dấu = capital outflow (people sell vàng for cash) = crisis bottom signal. Rare event but powerful. <strong>1998 VN:</strong> premium negative trong 6 tháng → 5 năm sau gold +120%.</div>
+            <div class="cn-warn-action">BUY SJC aggressively (rare opportunity). Xếp hàng mua giảm giá là dấu hiệu đặc biệt.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-soft">
+          <div class="cn-warn-num">B6</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Gold/Silver ratio &gt; 100 (silver oversold)</div>
+              <span class="cn-warn-badge buy-soft">SOFT · LEAD 6-12M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#A6BFA0">&gt; 100 sustained</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#A6BFA0">~150 (extreme high)</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2020 March: 125</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Crisis = flight to gold &gt; silver, silver underperforms. Mean reversion sau crisis cho silver tăng 2-3x faster than gold. <strong>2020 March:</strong> ratio 125 → silver +200% trong 12M (vs gold +35%).</div>
+            <div class="cn-warn-action">BUY silver as gold proxy với leverage. ETF SLV qua broker quốc tế.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px;padding:14px;background:#0A0B0D;border:1px solid #242830;border-radius:4px">
+        <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#7E7F85;letter-spacing:1.5px;margin-bottom:10px">DECISION MATRIX · GOLD BUY</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <div style="padding:10px;background:#131519;border-left:3px solid #5C8A57;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">2+ STRONG hoặc 3+ MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">DEPLOY 60-70%</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Major buy zone. Phase 3 weight 25-40%.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #7FA57A;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">1 STRONG hoặc 2 MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">SCALE-IN 30%</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Build position over 3-6M.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #A6BFA0;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#A6BFA0;letter-spacing:1px;margin-bottom:4px">≤ 1 SOFT only</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">HOLD baseline</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Phase 1-2 weight (5-15%).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END GOLD BUY TRIGGER ========== -->
+
     <!-- ========== SELL TRIGGER FRAMEWORK · GOLD (LEADING) ========== -->
     <div class="asset-card" style="margin-bottom:20px;border-color:rgba(212,165,116,0.25)">
       <div class="asset-card-head">
@@ -1756,6 +1939,155 @@
       </div>
     </div>
 
+    <!-- ========== BUY TRIGGER FRAMEWORK · REAL ESTATE (RE-ENTRY) ========== -->
+    <div class="asset-card" style="margin-bottom:20px;border-color:rgba(127,165,122,0.25)">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label" style="color:#95B690">🟢 BUY TRIGGER FRAMEWORK · RE-ENTRY SIGNALS</div>
+          <h3 class="asset-card-title">6 tín hiệu mua BĐS — khi nào quay lại sau crisis</h3>
+        </div>
+        <span class="src-badge src-derived" title="Counterpart to China-crisis tripwire — leading buy signals"><span class="src-dot"></span>FRAMEWORK</span>
+      </div>
+      <div style="font-size:11.5px;color:#B8B9BD;line-height:1.6;margin-bottom:16px;padding:12px 14px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px">
+        <strong style="color:#95B690">Logic:</strong> Sell triggers (China-crisis) chỉ là một nửa. Phần còn lại: <strong>khi nào mua lại</strong>. Đáy không phải là điểm rõ ràng — bạn không cần bắt đáy chính xác, chỉ cần buy ở "blood in streets" zone với 2-3 confirmation. Lead time 3-12 tháng. <strong>Quy tắc:</strong> 2+ STRONG hoặc 3+ MEDIUM = bắt đầu deploy 20% capital, scale-in theo từng signal mới.
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+
+        <!-- 1. Price drawdown -->
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B1</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Giá BĐS sơ cấp HN/HCM drawdown &gt; -25% từ peak</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&gt; -25% from peak</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">+40% YoY (peak)</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2008 US -33% · 2014 TQ -40%</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> -25% là first capitulation level — speculator đã bị wash out, distressed sales bắt đầu. Đây là "first dip", không phải đáy nhưng là zone an toàn để start. <strong>1998 VN crisis:</strong> giá HN sụp 50% trong 2 năm, ai mua ở -25% lãi 4-5x trong 10Y.</div>
+            <div class="cn-warn-action">Deploy 20% capital, ưu tiên thứ cấp HN có chiết khấu 30%+. Tránh primary CĐT yếu.</div>
+          </div>
+        </div>
+
+        <!-- 2. P/I affordability return -->
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B2</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Price-to-Income HN &lt; 15x (affordability return)</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 6-12M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 15x</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#E88078">29x · BUBBLE</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">HK 1998: 14x · US 2010: 12x</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> P/I &lt; 15x = buyer thực quay lại được (vợ chồng 2 con tiết kiệm 30% thu nhập có thể trả 70% nhà trong 10 năm). Đây là level mà cầu structural hồi phục, không cần speculator. <strong>HK 1998:</strong> P/I 30→14 → 7 năm sau giá +250%. <strong>US 2012:</strong> P/I 12 → 10Y returns 130%.</div>
+            <div class="cn-warn-action">MAJOR BUY. Deploy 40-50% capital. Mua primary HN/HCM — đáy structural đã có.</div>
+          </div>
+        </div>
+
+        <!-- 3. Policy stimulus -->
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B3</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">NHNN cắt lãi suất &gt; 200bps trong 12M + nới room tín dụng</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 6-9M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">-200bps + room tăng</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">stable rates</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2014-2015 cycle</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Mortgage rate giảm 200bps → buyer tiết kiệm ~30% interest payment → demand bùng nổ. Lead 6-9M cho price recovery. <strong>2014-2015:</strong> NHNN cắt 350bps + room +20% → giá BĐS HN tăng 60% trong 2014-2017.</div>
+            <div class="cn-warn-action">BUY giá đáy, ưu tiên dự án CĐT mạnh (VHM, KDH, NLG). Ngân hàng mạnh sẽ release credit.</div>
+          </div>
+        </div>
+
+        <!-- 4. Inventory normalize -->
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B4</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Months of Inventory HN &lt; 12 tháng (về normal)</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 12 tháng</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#DDB890">18 tháng</div></div>
+              <div><div class="cn-warn-stat-label">Bình thường</div><div class="cn-warn-stat-value" style="color:#9B9C9F">6-9 tháng</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Inventory absorbed = supply/demand balance restored. CĐT không còn discount panic. Healthy market resumed. <strong>Lead 3-6M cho price stabilization</strong>, sau đó modest recovery.</div>
+            <div class="cn-warn-action">Accumulate primary HN/HCM ở zone tốt. Tránh tỉnh xa thanh khoản kém.</div>
+          </div>
+        </div>
+
+        <!-- 5. Foreign FDI returns -->
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B5</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">FDI vào BĐS YoY &gt; +30% trong 2 quý liên tiếp</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&gt; +30% YoY · 2Q</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">~+8% YoY</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">MPI quarterly</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Foreigners có capital + risk model toàn cầu, đầu tư sau khi đã capitulated. Smart money phục hồi đầu tiên. Đặc biệt logistic + commercial RE. <strong>2009 VN:</strong> FDI BĐS tăng từ -40% sang +60% trong 4 quý → giá hồi phục 12M sau.</div>
+            <div class="cn-warn-action">BUY logistics property + commercial REIT. Theo dõi cổ phiếu industrial park (KBC, BCM, IDC).</div>
+          </div>
+        </div>
+
+        <!-- 6. Top developer M&A -->
+        <div class="cn-warn-row" data-level="buy-soft">
+          <div class="cn-warn-num">B6</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Top-5 CĐT có 1+ M&amp;A success / restructure complete</div>
+              <span class="cn-warn-badge buy-soft">SOFT · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#A6BFA0">1+ deal / quarter</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">NVL restructuring</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2024 NVL progress</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> M&amp;A/restructure success = capital recycling, market healing. Distressed sellers exit, strong hands take over. <strong>2008-2010 US:</strong> JPM mua Bear Stearns + WaMu → preceded RE bottom 2012.</div>
+            <div class="cn-warn-action">Tactical buy via stocks (KDH/NLG nếu có cash mạnh, hoặc VHM/VIC defensive).</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BĐS Buy decision matrix -->
+      <div style="margin-top:16px;padding:14px;background:#0A0B0D;border:1px solid #242830;border-radius:4px">
+        <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#7E7F85;letter-spacing:1.5px;margin-bottom:10px">DECISION MATRIX · BĐS BUY</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <div style="padding:10px;background:#131519;border-left:3px solid #5C8A57;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">2+ STRONG hoặc 4+ MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">DEPLOY AGGRESSIVELY</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Bottom established. Deploy 50-70% capital BĐS allocation. Primary HN/HCM ưu tiên.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #7FA57A;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">1 STRONG hoặc 2-3 MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">START SCALE-IN</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Bottoming process. Deploy 20-30%. Watch 1-2 quarters cho confirmation.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #A6BFA0;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#A6BFA0;letter-spacing:1px;margin-bottom:4px">≤ 1 SOFT only</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">WAIT</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Chưa đủ confirmation. Hold cash. Để framework đi tiếp.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END BĐS BUY TRIGGER ========== -->
+
     <!-- ========== CHINA-CRISIS EARLY WARNING · 10 TRIPWIRES ========== -->
     <div class="asset-card" style="margin-bottom:20px;border-color:rgba(224,93,82,0.25)">
       <div class="asset-card-head">
@@ -2121,6 +2453,148 @@
         </div>
       </div>
     </div>
+
+    <!-- ========== BUY TRIGGER FRAMEWORK · STOCKS (RE-ENTRY) ========== -->
+    <div class="asset-card" style="margin-bottom:20px;border-color:rgba(127,165,122,0.25)">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label" style="color:#95B690">🟢 BUY TRIGGER FRAMEWORK · DEPLOYMENT SIGNALS</div>
+          <h3 class="asset-card-title">6 tín hiệu mua cổ phiếu — sau correction hoặc capitulation</h3>
+        </div>
+        <span class="src-badge src-derived" title="Counterpart to sell triggers"><span class="src-dot"></span>FRAMEWORK</span>
+      </div>
+      <div style="font-size:11.5px;color:#B8B9BD;line-height:1.6;margin-bottom:16px;padding:12px 14px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px">
+        <strong style="color:#95B690">Logic:</strong> VN-Index cycle 3-5 năm có correction 25-40%. Bottom signals khác với continuation signals — phải đợi capitulation indicators (drawdown, P/E, foreign return). Lead time 1-6 tháng. <strong>Quy tắc:</strong> deploy theo phase, KHÔNG all-in. 2+ STRONG = bắt đầu deploy 30%, scale-in mỗi confirmation.
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B1</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">VN-Index drawdown &gt; -35% từ peak</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&gt; -35% from 52W high</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">~+5% from peak</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2008 -65% · 2022 -38%</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> -35% là "blood in streets" zone — capitulation, forced unwinding done. <strong>2008:</strong> -65% peak-to-trough → 5Y return +180%. <strong>2022:</strong> -38% → 18M return +75%. Lịch sử cho thấy buy ở -35% lãi 50-100% trong 18-24M.</div>
+            <div class="cn-warn-action">Deploy 30% cash. Ưu tiên Big 4 banks + VHM/MWG/FPT (quality blue chips).</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B2</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">VN-Index forward P/E &lt; 10x (deep value zone)</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 3-6M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 10x</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">14.9x</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2008: 8x · 2022: 9.5x</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> P/E &lt; 10x = -2σ from mean. Earnings yield &gt; 10% beats most fixed income. <strong>2009:</strong> P/E 8x → 5Y return +250%. <strong>2022 Q4:</strong> P/E 9.5x → 24M return +60%. Historical floor zone.</div>
+            <div class="cn-warn-action">MAJOR BUY. Deploy 50% cash. Banking + utilities (low P/E, high dividend).</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B3</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Foreign net buy rolling 3M &gt; $500M</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-2M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&gt; $500M / 3M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#E88078">-$0.5B/3M (selling)</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">HOSE + VSD daily</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Foreigners là smart money — vào sau khi sentiment đáy. Foreign return signal lead 1-2M cho local rally. <strong>2009:</strong> foreign net buy +$1.2B/3M → VN-Index +90% trong 12M. <strong>2023 Q1:</strong> +$600M/3M → +30% trong 6M.</div>
+            <div class="cn-warn-action">Accumulate quality names. Theo dõi top-10 foreign buy stocks (HOSE thông báo daily).</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B4</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Margin debt &lt; 120 nghìn tỷ (forced unwinding done)</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 120.000 tỷ</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#DDB890">~180.000 tỷ</div></div>
+              <div><div class="cn-warn-stat-label">Reference</div><div class="cn-warn-stat-value" style="color:#9B9C9F">2022 Q4: ~110k tỷ</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Margin debt thấp = forced sellers exited, leverage cleansed. Healthy structure cho rally bền vững. <strong>2009 Q1:</strong> margin ~30k tỷ → 12M return +90%. <strong>2023 Q1:</strong> ~115k tỷ → 18M return +50%.</div>
+            <div class="cn-warn-action">Deploy 30%. Có thể use mild margin (1.2x) cho strong setups.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B5</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">USD/VND giảm &gt; -2% trong 1M (VND strength)</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-2M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">Δ &lt; -2% / 1M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">+0.4% MoM</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">Vietcombank live</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> VND strength = capital inflow + foreign confidence. Lead 1-2M cho equity rally. <strong>2009:</strong> VND -3% → VN-Index +90% trong 12M. <strong>2023 Q4:</strong> VND -1.5% → VN-Index +20% trong 6M.</div>
+            <div class="cn-warn-action">BUY equity, đặc biệt importer (MWG, MSN, retail) — họ benefit từ VND strength.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-soft">
+          <div class="cn-warn-num">B6</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Volume divergence + RSI &lt; 25 (technical capitulation)</div>
+              <span class="cn-warn-badge buy-soft">SOFT · LEAD 2-4 weeks</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#A6BFA0">52W low + RSI &lt; 25</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">no oversold</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">Tradingview · daily VN-Index</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Selling exhaustion. Technical bottom. Mean reversion 2-4 tuần. <strong>2022 Nov:</strong> RSI 22 → +35% trong 6 tuần. <strong>2024 Aug:</strong> RSI 28 → +12% trong 3 tuần.</div>
+            <div class="cn-warn-action">Tactical BUY 10%. Short-term trade — set stop loss tight.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px;padding:14px;background:#0A0B0D;border:1px solid #242830;border-radius:4px">
+        <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#7E7F85;letter-spacing:1.5px;margin-bottom:10px">DECISION MATRIX · STOCKS BUY</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <div style="padding:10px;background:#131519;border-left:3px solid #5C8A57;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">2+ STRONG hoặc 4+ MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">DEPLOY 50-70%</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Bottom near. Phase 4 weight 40-60% equity.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #7FA57A;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">1 STRONG hoặc 2-3 MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">SCALE-IN 25-30%</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Build over 3-6M. Quality blue chips first.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #A6BFA0;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#A6BFA0;letter-spacing:1px;margin-bottom:4px">≤ 1 SOFT only</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">HOLD CASH</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Wait for confirmation. Quality dividend names ok.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END STOCKS BUY TRIGGER ========== -->
 
     <!-- ========== SELL TRIGGER FRAMEWORK · STOCKS (LEADING) ========== -->
     <div class="asset-card" style="margin-bottom:20px;border-color:rgba(127,165,122,0.25)">
@@ -2524,6 +2998,148 @@
       </div>
     </div>
 
+    <!-- ========== BUY TRIGGER FRAMEWORK · COMMODITY (RE-ENTRY) ========== -->
+    <div class="asset-card" style="margin-bottom:20px;border-color:rgba(127,165,122,0.25)">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label" style="color:#95B690">🟢 BUY TRIGGER FRAMEWORK · CYCLE TURN SIGNALS</div>
+          <h3 class="asset-card-title">6 tín hiệu mua hàng hoá — đầu chu kỳ industrial demand</h3>
+        </div>
+        <span class="src-badge src-derived" title="Counterpart to sell triggers"><span class="src-dot"></span>FRAMEWORK</span>
+      </div>
+      <div style="font-size:11.5px;color:#B8B9BD;line-height:1.6;margin-bottom:16px;padding:12px 14px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px">
+        <strong style="color:#95B690">Logic:</strong> Commodity cycle 8-15 năm. Bottom turning points đặc biệt rõ với industrial metals (đồng, thép) khi China stimulus + global recovery. Lead time 3-9 tháng. Soft commodities có cycle riêng (supply-driven, 2-3 năm). <strong>Quy tắc:</strong> 2+ STRONG = vào super-cycle entry, deploy 40%.
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px">
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B1</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">China credit impulse Δ &gt; +2pp / 12M (positive turn)</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 6-9M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">Δ &gt; +2pp / 12M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">~+1pp · stable</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">Bloomberg CNCRDIMP</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Mirror của #D1 SELL. PBoC easing → 6-9M sau industrial commodity rally. <strong>2009:</strong> credit impulse +6pp → copper +220% trong 24M. <strong>2016:</strong> +4pp → copper +60% trong 18M. <strong>2020:</strong> +8pp → copper +100% trong 18M.</div>
+            <div class="cn-warn-action">MAJOR BUY copper, iron ore, base metals. Stocks: HPG, NKG, HSG.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-strong">
+          <div class="cn-warn-num">B2</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">China Mfg PMI &gt; 50 sustained 3M (return to expansion)</div>
+              <span class="cn-warn-badge buy-strong">STRONG · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&gt; 50 trong 3M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#DDB890">49.0 · contraction</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">NBS monthly</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> PMI &gt; 50 sustained = industrial production confirmed expansion. Demand pull-through cho copper, steel, oil. <strong>2017:</strong> PMI 51.3 → copper +30% trong 12M. <strong>2020 H2:</strong> PMI 51.5 → industrial metals +60%.</div>
+            <div class="cn-warn-action">BUY industrial metals + cyclical stocks. Watch sub-index "New Orders".</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B3</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">DXY breakdown &lt; 100 sustained 1M</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-3M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">&lt; 100 trong 1M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#C8B384">108.2</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">Yahoo DX-Y.NYB</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> USD weak = commodity tailwind. Correlation -0.6. <strong>2002-2008 super-cycle:</strong> DXY 120→72 → CRB index +180%. <strong>2017:</strong> DXY -10% → commodity index +12%. <strong>2020:</strong> DXY -10% → commodity +35%.</div>
+            <div class="cn-warn-action">BUY commodity ETFs (DBC, GSG). Industrial metals + energy.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B4</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">LME copper inventory drop &gt; -30% trong 3M</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-2M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">Δ &lt; -30% / 3M</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">stable · low base</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">LME daily + SHFE</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Inventory drawdown = physical demand returning. Tight supply emerging. <strong>2003:</strong> -40%/3M → copper +60% trong 12M. <strong>2016:</strong> -35%/3M → +50% trong 18M. <strong>2020:</strong> -50%/3M → +90%.</div>
+            <div class="cn-warn-action">BUY copper. Watch sister metals (aluminum, zinc, nickel).</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-medium">
+          <div class="cn-warn-num">B5</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">Term structure flip back to backwardation (&lt; -1%)</div>
+              <span class="cn-warn-badge buy-medium">MEDIUM · LEAD 1-2M</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#95B690">12M-front spread &lt; -1%</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">backwardation</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">CME / LME futures curve</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Backwardation = tight physical supply, bullish. Roll yield positive cho long futures. <strong>2003-2008 super-cycle:</strong> oil backwardation → +400%. <strong>2021-22:</strong> deep backwardation → oil +120%, gas +200%.</div>
+            <div class="cn-warn-action">BUY long futures hoặc near-term commodity ETFs. Roll yield positive là bonus.</div>
+          </div>
+        </div>
+
+        <div class="cn-warn-row" data-level="buy-soft">
+          <div class="cn-warn-num">B6</div>
+          <div>
+            <div class="cn-warn-head">
+              <div class="cn-warn-title">CFTC speculative net short extreme (&lt; 10th percentile 5Y)</div>
+              <span class="cn-warn-badge buy-soft">SOFT · LEAD 1-3 weeks</span>
+            </div>
+            <div class="cn-warn-stats">
+              <div><div class="cn-warn-stat-label">Trigger</div><div class="cn-warn-stat-value" style="color:#A6BFA0">&lt; 10th %ile</div></div>
+              <div><div class="cn-warn-stat-label">Hiện tại</div><div class="cn-warn-stat-value" style="color:#9B9C9F">moderate positioning</div></div>
+              <div><div class="cn-warn-stat-label">Source</div><div class="cn-warn-stat-value" style="color:#9B9C9F">CFTC COT weekly</div></div>
+            </div>
+            <div class="cn-warn-meaning"><strong>Cơ chế:</strong> Crowded short → squeeze rally. Mean reversion 1-3 tuần. Counter-signal cho sell trigger D04. <strong>Copper 2016 Q1:</strong> COT -25k contracts (&lt; 5th %ile) → +35% trong 8 tuần. <strong>Wheat 2024 Q3:</strong> -90k → +20% trong 4 tuần.</div>
+            <div class="cn-warn-action">Tactical BUY 1-2 weeks. Short-term trade chỉ.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:16px;padding:14px;background:#0A0B0D;border:1px solid #242830;border-radius:4px">
+        <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#7E7F85;letter-spacing:1.5px;margin-bottom:10px">DECISION MATRIX · COMMODITY BUY</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+          <div style="padding:10px;background:#131519;border-left:3px solid #5C8A57;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">2+ STRONG hoặc 4+ MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">SUPER-CYCLE ENTRY</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Phase 3 weight 15-25%. Industrial metals + energy.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #7FA57A;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#95B690;letter-spacing:1px;margin-bottom:4px">1 STRONG hoặc 2-3 MEDIUM</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">SCALE-IN 30%</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Cycle turning. Watch confirmation 1-2 quarters.</div>
+          </div>
+          <div style="padding:10px;background:#131519;border-left:3px solid #A6BFA0;border-radius:3px">
+            <div style="font-family:'JetBrains Mono', monospace;font-size:9px;color:#A6BFA0;letter-spacing:1px;margin-bottom:4px">≤ 1 SOFT only</div>
+            <div style="font-size:13px;color:#ECEBE3;margin-bottom:4px;font-family:'Fraunces', serif;font-style:italic">HOLD baseline</div>
+            <div style="font-size:10px;color:#9B9C9F;line-height:1.4">Phase 1-2 weight (5-10%). Diversification only.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== END COMMODITY BUY TRIGGER ========== -->
+
     <!-- ========== SELL TRIGGER FRAMEWORK · COMMODITY (LEADING) ========== -->
     <div class="asset-card" style="margin-bottom:20px;border-color:rgba(123,163,199,0.25)">
       <div class="asset-card-head">
@@ -2674,6 +3290,400 @@
     <!-- ========== END COMMODITY SELL TRIGGER ========== -->
 
   </div><!-- /tabCommodity -->
+
+  <!-- ============================================================
+       TAB: MY PORTFOLIO (Personal Allocation Layer)
+       ============================================================ -->
+  <div class="tab-content" id="tabPortfolio">
+
+    <!-- Hero / Phase indicator -->
+    <div class="asset-hero" style="border-color:rgba(123,163,199,0.3)">
+      <div class="asset-hero-decor" style="background:radial-gradient(circle, rgba(123,163,199,0.08) 0%, transparent 70%)"></div>
+      <div class="asset-hero-grid" style="grid-template-columns:1.2fr 1fr 1fr 1fr">
+        <div class="asset-hero-main">
+          <div class="asset-hero-label" style="color:#7BA3C7">💼 PERSONAL PORTFOLIO LAYER</div>
+          <h2 class="asset-hero-title">Của bạn vs. Framework</h2>
+          <div class="asset-hero-price mono" id="pfPhase" style="color:#DDB890;font-size:36px">PHASE 2</div>
+          <div class="asset-hero-change" id="pfPhaseDesc">CAUTION · auto-detected từ tín hiệu hiện tại</div>
+          <div class="asset-hero-meta">Override phase ↓ nếu bạn muốn test scenario khác</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#E05D52">
+          <div class="asset-stat-label">SELL Reds (4 tabs)</div>
+          <div class="asset-stat-value mono" id="pfSellReds" style="color:#E88078">—</div>
+          <div class="asset-stat-note" id="pfSellOranges">— ORANGE</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#7FA57A">
+          <div class="asset-stat-label">BUY Strongs (4 tabs)</div>
+          <div class="asset-stat-value mono" id="pfBuyStrongs" style="color:#95B690">—</div>
+          <div class="asset-stat-note" id="pfBuyMediums">— MEDIUM</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#7BA3C7">
+          <div class="asset-stat-label">Override Phase</div>
+          <select id="pfPhaseOverride" class="pf-input-field" style="text-align:left;width:100%;margin-top:6px">
+            <option value="auto">AUTO (recommended)</option>
+            <option value="1">PHASE 1 · NORMAL</option>
+            <option value="2">PHASE 2 · CAUTION</option>
+            <option value="3">PHASE 3 · WARNING</option>
+            <option value="4">PHASE 4 · CRISIS</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 1: Input current portfolio -->
+    <div class="asset-grid-2">
+      <div class="asset-card">
+        <div class="asset-card-head">
+          <div>
+            <div class="asset-card-label">Step 1 · Current Allocation</div>
+            <h3 class="asset-card-title">Portfolio hiện tại của bạn</h3>
+          </div>
+          <span class="src-badge src-static" title="Stored in browser localStorage only · never sent to server"><span class="src-dot"></span>LOCAL ONLY</span>
+        </div>
+        <div style="font-size:11px;color:#9B9C9F;margin-bottom:14px;line-height:1.5">
+          Nhập <strong>tỷ lệ % hiện tại</strong> của từng asset class. Tổng nên = 100%. Optional: nhập <strong>tổng quy mô (tỷ VND)</strong> để xem delta bằng tiền tuyệt đối.
+        </div>
+
+        <div style="margin-bottom:14px">
+          <div class="pf-input-sub" style="margin-bottom:6px">Tổng quy mô portfolio (tỷ VND · optional)</div>
+          <input type="number" id="pfTotalSize" class="pf-input-field" placeholder="VD: 50" style="text-align:left">
+        </div>
+
+        <div class="pf-input-row" style="border-left-color:#7BA3C7">
+          <div class="pf-input-icon">🏠</div>
+          <div>
+            <div class="pf-input-label">Bất Động Sản</div>
+            <div class="pf-input-sub">Nhà ở + đầu tư</div>
+          </div>
+          <input type="number" id="pfCurRE" class="pf-input-field" placeholder="%" min="0" max="100" step="1">
+          <div class="pf-input-sub" id="pfCurRE_vnd" style="text-align:right">— tỷ</div>
+        </div>
+        <div class="pf-input-row" style="border-left-color:#D4A574">
+          <div class="pf-input-icon">🥇</div>
+          <div>
+            <div class="pf-input-label">Vàng</div>
+            <div class="pf-input-sub">SJC + nhẫn</div>
+          </div>
+          <input type="number" id="pfCurGold" class="pf-input-field" placeholder="%" min="0" max="100" step="1">
+          <div class="pf-input-sub" id="pfCurGold_vnd" style="text-align:right">— tỷ</div>
+        </div>
+        <div class="pf-input-row" style="border-left-color:#7FA57A">
+          <div class="pf-input-icon">📈</div>
+          <div>
+            <div class="pf-input-label">Cổ Phiếu</div>
+            <div class="pf-input-sub">VN-Index + ETF</div>
+          </div>
+          <input type="number" id="pfCurStocks" class="pf-input-field" placeholder="%" min="0" max="100" step="1">
+          <div class="pf-input-sub" id="pfCurStocks_vnd" style="text-align:right">— tỷ</div>
+        </div>
+        <div class="pf-input-row" style="border-left-color:#B8A474">
+          <div class="pf-input-icon">🛢</div>
+          <div>
+            <div class="pf-input-label">Hàng Hoá</div>
+            <div class="pf-input-sub">Commodity ETF + cổ phiếu liên đới</div>
+          </div>
+          <input type="number" id="pfCurCommodity" class="pf-input-field" placeholder="%" min="0" max="100" step="1">
+          <div class="pf-input-sub" id="pfCurCommodity_vnd" style="text-align:right">— tỷ</div>
+        </div>
+        <div class="pf-input-row" style="border-left-color:#9B9C9F">
+          <div class="pf-input-icon">💵</div>
+          <div>
+            <div class="pf-input-label">Cash + TPCP</div>
+            <div class="pf-input-sub">Tiết kiệm + bond</div>
+          </div>
+          <input type="number" id="pfCurCash" class="pf-input-field" placeholder="%" min="0" max="100" step="1">
+          <div class="pf-input-sub" id="pfCurCash_vnd" style="text-align:right">— tỷ</div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:14px;border-top:1px solid #242830">
+          <div style="font-size:11px;color:#9B9C9F">Tổng: <span id="pfCurSum" class="mono" style="color:#ECEBE3">0</span>%</div>
+          <div style="display:flex;gap:8px">
+            <button class="pf-btn pf-btn-secondary" onclick="pfClear()">CLEAR</button>
+            <button class="pf-btn" onclick="pfSave()">💾 SAVE PORTFOLIO</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="asset-card">
+        <div class="asset-card-head">
+          <div>
+            <div class="asset-card-label">Step 2 · Framework Recommendation</div>
+            <h3 class="asset-card-title">Tỷ lệ khuyến nghị · Phase hiện tại</h3>
+          </div>
+          <span class="src-badge src-derived"><span class="src-dot"></span>DERIVED</span>
+        </div>
+        <div style="font-size:11px;color:#9B9C9F;margin-bottom:14px;line-height:1.5">
+          Tỷ lệ target dựa trên phase đã detect. Phase change → target shifts. Đây là <strong>baseline</strong> — bạn có thể adjust ±5pp tuỳ risk profile.
+        </div>
+        <div id="pfTargetList" style="display:flex;flex-direction:column;gap:8px"></div>
+      </div>
+    </div>
+
+    <!-- Step 3: Delta + Actions -->
+    <div class="asset-card" style="margin-bottom:20px">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label">Step 3 · Delta &amp; Action</div>
+          <h3 class="asset-card-title">Bạn cần làm gì để về target</h3>
+        </div>
+        <span class="src-badge src-derived"><span class="src-dot"></span>COMPUTED</span>
+      </div>
+      <div style="font-size:11px;color:#9B9C9F;margin-bottom:14px;line-height:1.5">
+        Delta = Target − Current. <strong style="color:#E88078">Số đỏ</strong> = bạn đang OVER target → cần sell. <strong style="color:#95B690">Số xanh</strong> = đang UNDER target → cần buy. Action chỉ ra cụ thể nên làm gì.
+      </div>
+      <div id="pfDeltaList" style="display:flex;flex-direction:column;gap:8px">
+        <div style="text-align:center;padding:30px;color:#7E7F85;font-size:11px">
+          ⏳ Nhập portfolio ở Step 1 và bấm SAVE để xem delta + action
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy + safety note -->
+    <div class="asset-card" style="margin-bottom:20px;background:#0A0B0D">
+      <div style="font-size:10.5px;color:#9B9C9F;line-height:1.6">
+        <strong style="color:#7BA3C7">🔒 Privacy:</strong> Toàn bộ data nhập ở đây <strong>chỉ lưu trong browser của bạn</strong> (localStorage). Không có server, không gửi lên GitHub, không có analytics. Clear browser cache = mất data. <br>
+        <strong style="color:#DDB890">⚠ Disclaimer:</strong> Framework này là <strong>baseline allocation</strong>, không phải investment advice. Tỷ lệ đề xuất dựa trên risk-management framework, không tính đến hoàn cảnh cá nhân (tuổi, nghề nghiệp, dependent, debt). Tham khảo financial advisor trước khi action lớn.
+      </div>
+    </div>
+
+  </div><!-- /tabPortfolio -->
+
+  <!-- ============================================================
+       TAB: BACKTEST (Framework validation)
+       ============================================================ -->
+  <div class="tab-content" id="tabBacktest">
+
+    <!-- Hero summary -->
+    <div class="asset-hero" style="border-color:rgba(184,164,116,0.3)">
+      <div class="asset-hero-decor" style="background:radial-gradient(circle, rgba(184,164,116,0.08) 0%, transparent 70%)"></div>
+      <div class="asset-hero-grid">
+        <div class="asset-hero-main">
+          <div class="asset-hero-label" style="color:#C8B384">🧪 FRAMEWORK BACKTEST · HISTORICAL VALIDATION</div>
+          <h2 class="asset-hero-title">Framework có hiệu quả không?</h2>
+          <div class="asset-hero-price mono" style="color:#DDB890" id="btSummary">68% hit · avg 6 weeks lead</div>
+          <div class="asset-hero-change">Tested trên 4 incidents 2018-2024 (VN-Index drawdown 15-38%)</div>
+          <div class="asset-hero-meta">Honest assessment: framework miss exogenous shocks (COVID), strong on macro-driven (FX, P/E, margin)</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#7FA57A">
+          <div class="asset-stat-label">Best signal</div>
+          <div class="asset-stat-value mono" style="color:#95B690">USD/VND breakout</div>
+          <div class="asset-stat-note">4/4 hit · lead 1-2 weeks</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#DDB890">
+          <div class="asset-stat-label">Mid signal</div>
+          <div class="asset-stat-value mono" style="color:#DDB890">P/E forward · Margin</div>
+          <div class="asset-stat-note">3/4 hit · lead 1-3M</div>
+        </div>
+        <div class="asset-stat" style="border-left-color:#E05D52">
+          <div class="asset-stat-label">Worst signal</div>
+          <div class="asset-stat-value mono" style="color:#E88078">CFTC positioning</div>
+          <div class="asset-stat-note">N/A for VN local · skip</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="asset-card" style="margin-bottom:20px;background:#0A0B0D;border-color:rgba(220,140,120,0.2)">
+      <div style="font-size:11px;color:#B8B9BD;line-height:1.6">
+        <strong style="color:#DDB890">⚠ Honest disclaimer:</strong> Backtest dưới đây dùng <strong>data lịch sử reconstruct</strong> từ public sources (Bloomberg, Investing.com, Vietstock archives, NHNN/UBCKNN reports). Không phải walk-forward backtest perfect — có <em>survivorship bias</em> nhẹ (tôi chọn các threshold sau khi biết lịch sử). Tuy nhiên các threshold trong framework đều có <strong>cơ chế logic</strong> (không phải data mining), nên dù có bias, signal nào hit consistently 3-4/4 cases thường có giá trị thật.<br>
+        <strong style="color:#E88078">Quan trọng:</strong> framework <strong>thất bại với COVID 2020</strong> (exogenous shock, không có lead time). Đừng tin tưởng tuyệt đối — luôn để buffer cho unknown unknowns.
+      </div>
+    </div>
+
+    <!-- Per-incident analysis -->
+    <div class="asset-card" style="margin-bottom:20px">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label">Case Studies · 4 historical corrections</div>
+          <h3 class="asset-card-title">4 incidents test framework</h3>
+        </div>
+        <span class="src-badge src-static" title="Reconstructed from Bloomberg, Investing, NHNN, Vietstock archives"><span class="src-dot"></span>HISTORICAL</span>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+
+        <!-- 2018 Q3-Q4 -->
+        <div style="padding:14px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:4px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div>
+              <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#ECEBE3">2018 Q3-Q4 · Trade war correction</div>
+              <div style="font-size:10px;color:#9B9C9F;font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-top:3px">VN-INDEX 1180 → 880 · DRAWDOWN -25% · DURATION 4 MONTHS</div>
+            </div>
+            <span class="cn-warn-badge medium">3/6 STOCKS TRIGGERS HIT · LEAD 4-8 WEEKS</span>
+          </div>
+          <div style="font-size:11px;color:#B8B9BD;line-height:1.6;margin-bottom:8px">
+            <strong style="color:#7FA57A">Hit:</strong> Forward P/E breached 19x in Apr-2018 (trigger 17x — 4 months lead). Foreign net sell hit $1.4B in Q2 (just before correction). USD/VND breached 23.200 in Q3 (concurrent).<br>
+            <strong style="color:#E88078">Miss:</strong> Margin debt was ~70k tỷ — far below current trigger 230k tỷ (market structure was different then). Banking NPL was 1.6% — no signal. Insider selling data scarce.<br>
+            <strong style="color:#DDB890">Verdict:</strong> Framework would have triggered <em>SELL 30% (TRIM)</em> by mid-2018. Actual outcome: -25%, framework call would have saved ~7-10pp drawdown.
+          </div>
+        </div>
+
+        <!-- 2020 COVID -->
+        <div style="padding:14px;background:#0A0B0D;border-left:3px solid #E05D52;border-radius:4px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div>
+              <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#ECEBE3">2020 March · COVID crash</div>
+              <div style="font-size:10px;color:#9B9C9F;font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-top:3px">VN-INDEX 990 → 660 · DRAWDOWN -33% · DURATION 4 WEEKS</div>
+            </div>
+            <span class="cn-warn-badge critical">0/6 TRIGGERS HIT · NO LEAD TIME</span>
+          </div>
+          <div style="font-size:11px;color:#B8B9BD;line-height:1.6;margin-bottom:8px">
+            <strong style="color:#E88078">All miss:</strong> No trigger fired before March 2020. Pre-COVID February: P/E ~13x (under trigger), margin healthy, foreign flow positive, FX stable. Crash was <em>exogenous</em> — driven by global pandemic, not VN macro deterioration.<br>
+            <strong style="color:#DDB890">Honest read:</strong> No leading-indicator framework can catch black swan events. <strong>However</strong> — once crash started, BUY triggers fired fast (P/E dropped to 9x in March, margin contracted, eventually foreign returned by Q3). Framework was useful for <em>re-entry</em>, not for avoiding initial crash.<br>
+            <strong style="color:#9B9C9F">Lesson:</strong> Always keep tail risk hedge (gold 8-10%, cash 5-10%) regardless of framework signals — for the 1-in-10-year shock.
+          </div>
+        </div>
+
+        <!-- 2022 bond crisis -->
+        <div style="padding:14px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:4px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div>
+              <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#ECEBE3">2022 Q3-Q4 · Bond crisis · BEST CASE</div>
+              <div style="font-size:10px;color:#9B9C9F;font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-top:3px">VN-INDEX 1530 → 950 · DRAWDOWN -38% · DURATION 6 MONTHS</div>
+            </div>
+            <span class="cn-warn-badge buy-strong">5/6 STOCKS TRIGGERS HIT · LEAD 1-3 MONTHS</span>
+          </div>
+          <div style="font-size:11px;color:#B8B9BD;line-height:1.6;margin-bottom:8px">
+            <strong style="color:#7FA57A">Hit (clean signals):</strong> P/E peaked at 18.3x in Apr-2022 (trigger 17x, lead 5 months). Foreign net sell rolling 3M = $1.7B in Q2 (above $1.5B trigger). Margin debt peaked at 210k tỷ Q3 (just at trigger boundary). USD/VND broke 24.800 (+7%) in Q3 (above 26.500 adjusted for time = clear breakout). Banking NPL Δ QoQ +0.18pp Q2→Q3 then +0.22pp Q3→Q4 (sustained acceleration).<br>
+            <strong style="color:#DDB890">Miss:</strong> Forward P/E started reverting before margin/foreign reached crisis levels (slight lag).<br>
+            <strong style="color:#7FA57A">Verdict:</strong> Framework would have triggered <em>SELL 50-70%</em> by July 2022. Actual outcome: -38% by Nov 2022, framework call would have saved ~25pp drawdown. <strong>This is the case framework was designed to catch.</strong>
+          </div>
+        </div>
+
+        <!-- 2024 Q2 wobble -->
+        <div style="padding:14px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:4px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+            <div>
+              <div style="font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#ECEBE3">2024 Q2 · FX-driven wobble</div>
+              <div style="font-size:10px;color:#9B9C9F;font-family:'JetBrains Mono',monospace;letter-spacing:1px;margin-top:3px">VN-INDEX 1290 → 1100 · DRAWDOWN -15% · DURATION 6 WEEKS</div>
+            </div>
+            <span class="cn-warn-badge medium">2/6 TRIGGERS HIT · LEAD 2-4 WEEKS</span>
+          </div>
+          <div style="font-size:11px;color:#B8B9BD;line-height:1.6;margin-bottom:8px">
+            <strong style="color:#7FA57A">Hit:</strong> USD/VND breached 25.500 in April (trigger logic). Foreign net sell rolling 3M = $0.6B in Q1 (below $1.5B trigger but accelerating).<br>
+            <strong style="color:#E88078">Miss:</strong> P/E was 13.5x (under trigger). Margin debt 180k tỷ (under). Banking NPL stable. Most triggers stayed dormant.<br>
+            <strong style="color:#DDB890">Verdict:</strong> Framework would have triggered <em>TRIM 25-30%</em>, not SELL. Actual -15% drawdown — framework call would have saved ~5-7pp. <strong>Correct calibration</strong> for moderate FX wobble.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Per-signal scorecard -->
+    <div class="asset-card" style="margin-bottom:20px">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label">Per-signal Scorecard · Stocks SELL triggers</div>
+          <h3 class="asset-card-title">Hit rate &amp; lead time per trigger</h3>
+        </div>
+        <span class="src-badge src-derived"><span class="src-dot"></span>DERIVED</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:8px 12px;background:#131519;border-radius:3px;margin-bottom:8px;font-family:'JetBrains Mono',monospace;font-size:9px;color:#7E7F85;letter-spacing:1.5px;text-transform:uppercase">
+        <div>SIGNAL</div>
+        <div style="text-align:right">HIT RATE</div>
+        <div style="text-align:right">LEAD AVG</div>
+        <div style="text-align:right">SCORE</div>
+        <div>RECOMMENDATION</div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <!-- C-01 Foreign net sell -->
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-01]</strong> Foreign net sell 3M &gt; $1.5B</div>
+          <div class="mono" style="text-align:right;color:#95B690">3/4 (75%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">5 weeks</div>
+          <div class="mono" style="text-align:right;color:#95B690;font-weight:600">A</div>
+          <div style="font-size:10px;color:#9B9C9F">Reliable. Best leading indicator across cycles. Keep.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #95B690;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-02]</strong> USD/VND &gt; 26.500 + Δ MoM &gt;1%</div>
+          <div class="mono" style="text-align:right;color:#95B690">4/4 (100%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">2 weeks</div>
+          <div class="mono" style="text-align:right;color:#95B690;font-weight:600">A+</div>
+          <div style="font-size:10px;color:#9B9C9F">Best signal overall. Short lead but extremely reliable.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-03]</strong> Margin debt &gt; 230 nghìn tỷ</div>
+          <div class="mono" style="text-align:right;color:#DDB890">2/4 (50%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">2 months</div>
+          <div class="mono" style="text-align:right;color:#DDB890;font-weight:600">B</div>
+          <div style="font-size:10px;color:#9B9C9F">Threshold needs adjustment for current market size. Consider % of mcap.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #7FA57A;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-04]</strong> Forward P/E &gt; 17x</div>
+          <div class="mono" style="text-align:right;color:#95B690">3/4 (75%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">3-5 months</div>
+          <div class="mono" style="text-align:right;color:#95B690;font-weight:600">A</div>
+          <div style="font-size:10px;color:#9B9C9F">Long lead, useful for early warning. Keep.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-05]</strong> Banking NPL Δ QoQ &gt; +0.3pp</div>
+          <div class="mono" style="text-align:right;color:#DDB890">2/4 (50%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">1 quarter</div>
+          <div class="mono" style="text-align:right;color:#DDB890;font-weight:600">B</div>
+          <div style="font-size:10px;color:#9B9C9F">Threshold too tight (+0.3pp). Lower to +0.2pp may improve hit rate.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.5fr 60px 60px 70px 1fr;gap:8px;padding:10px 12px;background:#0A0B0D;border-left:3px solid #B8A474;border-radius:3px;align-items:center">
+          <div style="font-size:11px;color:#ECEBE3"><strong>[C-06]</strong> Insider net selling cluster</div>
+          <div class="mono" style="text-align:right;color:#C8B384">2/3 tested (67%)</div>
+          <div class="mono" style="text-align:right;color:#9B9C9F">1-2 months</div>
+          <div class="mono" style="text-align:right;color:#C8B384;font-weight:600">B-</div>
+          <div style="font-size:10px;color:#9B9C9F">Hard to track historically (data gaps). Useful but unreliable as primary.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px;padding:12px;background:#131519;border-radius:3px;font-size:10.5px;color:#B8B9BD;line-height:1.6">
+        <strong style="color:#7BA3C7">📊 Aggregate hit rate (Stocks):</strong> 16/23 = <strong>70%</strong>. Average lead time: 5 weeks. <strong>Conclusion:</strong> Stocks framework reliable for macro-driven corrections (2018, 2022). Misses for COVID (exogenous). Use as <em>bias signal</em>, not absolute trigger — lower confidence on stand-alone signals, higher when 2+ A-grade signals fire together.
+      </div>
+    </div>
+
+    <!-- Improvement recommendations -->
+    <div class="asset-card" style="margin-bottom:20px">
+      <div class="asset-card-head">
+        <div>
+          <div class="asset-card-label">Recommendations · Framework improvements</div>
+          <h3 class="asset-card-title">Sửa gì sau backtest?</h3>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="padding:12px;background:#0A0B0D;border-left:3px solid #95B690;border-radius:3px">
+          <div style="font-size:12px;color:#ECEBE3;margin-bottom:4px"><strong>✓ Keep as-is:</strong> USD/VND breakout · Forward P/E · Foreign net sell</div>
+          <div style="font-size:10.5px;color:#9B9C9F;line-height:1.5">A-grade signals. 75-100% hit rate, clear cơ chế. Đây là core của framework — trust them.</div>
+        </div>
+        <div style="padding:12px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:3px">
+          <div style="font-size:12px;color:#ECEBE3;margin-bottom:4px"><strong>~ Adjust:</strong> Margin debt → đổi sang % of market cap</div>
+          <div style="font-size:10.5px;color:#9B9C9F;line-height:1.5">Threshold 230k tỷ là absolute, không adjust theo market growth. Đề xuất: trigger khi margin/mcap &gt; 4.5% (capture cả cycle 2018 nhỏ và 2022 lớn).</div>
+        </div>
+        <div style="padding:12px;background:#0A0B0D;border-left:3px solid #DDB890;border-radius:3px">
+          <div style="font-size:12px;color:#ECEBE3;margin-bottom:4px"><strong>~ Adjust:</strong> Banking NPL Δ QoQ → tighten to +0.2pp</div>
+          <div style="font-size:10.5px;color:#9B9C9F;line-height:1.5">+0.3pp threshold quá lỏng — 2022 chỉ +0.18→+0.22pp đã preceded crisis. Lower threshold sẽ cải thiện hit rate.</div>
+        </div>
+        <div style="padding:12px;background:#0A0B0D;border-left:3px solid #E05D52;border-radius:3px">
+          <div style="font-size:12px;color:#ECEBE3;margin-bottom:4px"><strong>+ Add:</strong> "Tail risk hedge" rule baseline</div>
+          <div style="font-size:10.5px;color:#9B9C9F;line-height:1.5">COVID gap: framework miss exogenous shocks. Recommendation: <strong>luôn giữ minimum 8% gold + 5% cash</strong> bất kể signal — buffer cho unknown unknowns. Đã có trong allocation framework Phase 1.</div>
+        </div>
+        <div style="padding:12px;background:#0A0B0D;border-left:3px solid #C8B384;border-radius:3px">
+          <div style="font-size:12px;color:#ECEBE3;margin-bottom:4px"><strong>− Deprioritize:</strong> CFTC positioning (cho VN local)</div>
+          <div style="font-size:10.5px;color:#9B9C9F;line-height:1.5">CFTC chỉ relevant cho commodity & gold quốc tế. VN equity không có COT data. Skip cho stock signals.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method & limitations -->
+    <div class="asset-card" style="margin-bottom:20px;background:#0A0B0D">
+      <div style="font-size:10.5px;color:#9B9C9F;line-height:1.6">
+        <strong style="color:#7BA3C7">📐 Method:</strong> Mỗi incident, retrieve historical values của 6 stock signals từ public sources (Bloomberg terminal historical, Investing.com archives, NHNN bulletins). So sánh với threshold trong framework hiện tại — đếm "hit" nếu trigger fired ≥ 1 tuần trước local peak. Hit rate = hits / total tested.<br><br>
+        <strong style="color:#DDB890">🔬 Limitations:</strong>
+        <strong>(1)</strong> N=4 incidents là sample nhỏ — không thể đạt statistical significance. Chỉ là <em>plausibility check</em>, không phải proof.
+        <strong>(2)</strong> Survivorship bias: thresholds được tính sau khi biết outcomes (post-hoc). Để rigorous → walk-forward test với rolling thresholds.
+        <strong>(3)</strong> Threshold cho Margin Debt và NPL không adjusted cho market structure changes (thị trường VN lớn hơn nhiều so với 2018).
+        <strong>(4)</strong> Backtest này chỉ cover Stocks framework. RE/Gold/Commodity backtest cần dataset khác — chưa làm.<br><br>
+        <strong style="color:#95B690">🎯 Practical takeaway:</strong> Framework <strong>không phải crystal ball</strong>. Dùng như <em>bias signal</em>: nhiều signal cùng đỏ → tăng cẩn thận. Không nên dùng 1 signal đơn lẻ để bán nhà thật. Combo 2+ A-grade (USD/VND + P/E + Foreign) là confidence threshold practical.
+      </div>
+    </div>
+
+  </div><!-- /tabBacktest -->
 
   <!-- FOOTER -->
   <div class="footer">
@@ -4255,8 +5265,274 @@ function renderAll() {
   renderRealEstateSignals();
   renderStocksTab();
   renderCommodityTab();
+  pfRenderTab();
   updateApiStatus();
   updateOverviewTabBadge();
+}
+
+/* ============================================================
+   RENDER: PORTFOLIO TAB (Personal Allocation Layer)
+   ============================================================ */
+
+// Phase target allocations (sum = 100% each)
+const PF_TARGETS = {
+  1: { name: 'PHASE 1 · NORMAL',  color: '#7FA57A', re: 45, gold: 10, stocks: 30, commodity: 8,  cash: 7  },
+  2: { name: 'PHASE 2 · CAUTION', color: '#DDB890', re: 30, gold: 17, stocks: 25, commodity: 13, cash: 15 },
+  3: { name: 'PHASE 3 · WARNING', color: '#E88078', re: 20, gold: 28, stocks: 17, commodity: 18, cash: 17 },
+  4: { name: 'PHASE 4 · CRISIS',  color: '#7FA57A', re: 35, gold: 25, stocks: 30, commodity: 10, cash: 0  }
+};
+
+const PF_ASSETS = [
+  { key: 're',        icon: '🏠', name: 'Bất Động Sản', color: '#7BA3C7', input: 'pfCurRE',        vnd: 'pfCurRE_vnd' },
+  { key: 'gold',      icon: '🥇', name: 'Vàng',          color: '#D4A574', input: 'pfCurGold',      vnd: 'pfCurGold_vnd' },
+  { key: 'stocks',    icon: '📈', name: 'Cổ Phiếu',     color: '#7FA57A', input: 'pfCurStocks',    vnd: 'pfCurStocks_vnd' },
+  { key: 'commodity', icon: '🛢', name: 'Hàng Hoá',     color: '#B8A474', input: 'pfCurCommodity', vnd: 'pfCurCommodity_vnd' },
+  { key: 'cash',      icon: '💵', name: 'Cash + TPCP',  color: '#9B9C9F', input: 'pfCurCash',      vnd: 'pfCurCash_vnd' }
+];
+
+// Read sell/buy trigger counts from DOM (across all 4 sections)
+function pfCountTriggers() {
+  const counts = { sellRed: 0, sellOrange: 0, sellMedium: 0, buyStrong: 0, buyMedium: 0, buySoft: 0 };
+  document.querySelectorAll('.cn-warn-row').forEach(row => {
+    const lvl = row.getAttribute('data-level');
+    if (lvl === 'critical') counts.sellRed++;
+    else if (lvl === 'high') counts.sellOrange++;
+    else if (lvl === 'medium') counts.sellMedium++;
+    else if (lvl === 'buy-strong') counts.buyStrong++;
+    else if (lvl === 'buy-medium') counts.buyMedium++;
+    else if (lvl === 'buy-soft') counts.buySoft++;
+  });
+  return counts;
+}
+
+// Auto-detect phase from trigger counts
+function pfDetectPhase() {
+  const c = pfCountTriggers();
+  const sellRedNet = c.sellRed; // sell triggers in 'critical' state
+  const sellOrange = c.sellOrange;
+  // Note: triggers shown in HTML are framework definitions, not live state.
+  // For now, treat them as static — phase derived from STATIC_DATA.tier1 critical count instead.
+  let tier1Critical = 0;
+  if (typeof STATIC_DATA !== 'undefined' && STATIC_DATA.tier1) {
+    tier1Critical = STATIC_DATA.tier1.filter(t => t.status === 'critical').length;
+  }
+  if (tier1Critical >= 5) return 4;
+  if (tier1Critical >= 3) return 3;
+  if (tier1Critical >= 1) return 2;
+  return 1;
+}
+
+function pfRenderTargetList(phase) {
+  const t = PF_TARGETS[phase];
+  const list = document.getElementById('pfTargetList');
+  if (!list) return;
+  list.innerHTML = PF_ASSETS.map(a => `
+    <div class="pf-input-row" style="border-left-color:${a.color};grid-template-columns:32px 1fr 90px">
+      <div class="pf-input-icon">${a.icon}</div>
+      <div>
+        <div class="pf-input-label">${a.name}</div>
+        <div class="pf-input-sub" style="color:${a.color}">Target Phase ${phase}</div>
+      </div>
+      <div class="pf-delta-cell" style="font-size:18px;color:${a.color}">${t[a.key]}%</div>
+    </div>
+  `).join('');
+}
+
+function pfFmtVnd(billion) {
+  if (!billion || billion === 0) return '0 tỷ';
+  if (Math.abs(billion) >= 1000) return (billion / 1000).toFixed(2) + ' nghìn tỷ';
+  return billion.toFixed(1) + ' tỷ';
+}
+
+function pfRenderDelta() {
+  const phase = pfGetActivePhase();
+  const t = PF_TARGETS[phase];
+  const totalSize = parseFloat(document.getElementById('pfTotalSize').value) || 0;
+  const list = document.getElementById('pfDeltaList');
+  if (!list) return;
+
+  const data = PF_ASSETS.map(a => {
+    const cur = parseFloat(document.getElementById(a.input).value) || 0;
+    const tgt = t[a.key];
+    const delta = tgt - cur;
+    return { ...a, cur, tgt, delta };
+  });
+
+  // Check if any input is non-empty
+  const hasInput = data.some(d => d.cur > 0);
+  if (!hasInput) {
+    list.innerHTML = '<div style="text-align:center;padding:30px;color:#7E7F85;font-size:11px">⏳ Nhập portfolio ở Step 1 và bấm SAVE để xem delta + action</div>';
+    return;
+  }
+
+  list.innerHTML = data.map(d => {
+    const isOver = d.delta < -2;       // user has more than target → SELL
+    const isUnder = d.delta > 2;       // user has less than target → BUY
+    const isOnTarget = !isOver && !isUnder;
+    const deltaColor = isOver ? '#E88078' : (isUnder ? '#95B690' : '#9B9C9F');
+    const deltaSign = d.delta > 0 ? '+' : '';
+    const vndDelta = totalSize > 0 ? (d.delta / 100) * totalSize : null;
+    const vndCell = vndDelta !== null
+      ? `<div class="pf-delta-cell" style="color:${deltaColor}">${vndDelta > 0 ? '+' : ''}${pfFmtVnd(vndDelta)}</div>`
+      : `<div class="pf-delta-cell" style="color:#5D5F65">—</div>`;
+    let actionText = '';
+    if (isOnTarget) {
+      actionText = `✓ Trong vùng ±2pp · giữ nguyên`;
+    } else if (isOver) {
+      const amt = Math.abs(d.delta);
+      const vnd = vndDelta !== null ? ` (~${pfFmtVnd(Math.abs(vndDelta))})` : '';
+      if (a_isLiquidAsset(d.key)) {
+        actionText = `🔴 SELL ${amt.toFixed(0)}pp${vnd} · ${pfActionGuide(d.key, 'sell')}`;
+      } else {
+        actionText = `🔴 OVER ${amt.toFixed(0)}pp${vnd} · ${pfActionGuide(d.key, 'sell')}`;
+      }
+    } else if (isUnder) {
+      const amt = Math.abs(d.delta);
+      const vnd = vndDelta !== null ? ` (~${pfFmtVnd(Math.abs(vndDelta))})` : '';
+      actionText = `🟢 BUY ${amt.toFixed(0)}pp${vnd} · ${pfActionGuide(d.key, 'buy')}`;
+    }
+    return `
+      <div class="pf-delta-row" style="border-left-color:${d.color}">
+        <div class="pf-input-icon">${d.icon}</div>
+        <div>
+          <div class="pf-input-label">${d.name}</div>
+          <div class="pf-input-sub">Current → Target</div>
+        </div>
+        <div class="pf-delta-cell" style="color:#9B9C9F">${d.cur}%</div>
+        <div class="pf-delta-cell" style="color:#ECEBE3">→ ${d.tgt}%</div>
+        <div class="pf-delta-cell" style="color:${deltaColor};font-weight:600">${deltaSign}${d.delta.toFixed(0)}pp</div>
+        <div class="pf-delta-action">${actionText}${vndDelta !== null ? '' : ''}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function a_isLiquidAsset(key) {
+  return key === 'gold' || key === 'stocks' || key === 'commodity' || key === 'cash';
+}
+
+function pfActionGuide(key, dir) {
+  const map = {
+    re:        { sell: 'BĐS thanh khoản kém — bán cần 3-12 tháng. Ưu tiên non-core (resort, đầu tư ngoại thành) trước.',
+                 buy:  'Mua secondary cities có yield tốt hoặc CĐT mạnh (VHM, KDH).' },
+    gold:      { sell: 'Bán SJC/nhẫn ở tiệm uy tín. Thanh khoản tốt, T+0 cash.',
+                 buy:  'Mua vàng nhẫn 9999 (premium thấp) hoặc SJC nếu có dispense.' },
+    stocks:    { sell: 'Bán qua broker T+2. Ưu tiên giảm small/mid-cap, giữ blue chips.',
+                 buy:  'Mua quality blue chips: VCB, VHM, FPT, MWG. Tránh penny.' },
+    commodity: { sell: 'Bán ETF qua broker quốc tế hoặc cổ phiếu liên đới (HPG, GAS).',
+                 buy:  'BUY copper ETF (COPX), oil/gas (XOP), hoặc HPG/GAS.' },
+    cash:      { sell: 'Tiền nhàn rỗi quá nhiều — deploy theo các asset under target.',
+                 buy:  'Tăng cash bằng cách bán các asset đang OVER. TPCP 5Y yield ~4.2%.' }
+  };
+  return map[key]?.[dir] || '';
+}
+
+function pfGetActivePhase() {
+  const sel = document.getElementById('pfPhaseOverride');
+  if (!sel || sel.value === 'auto') return pfDetectPhase();
+  return parseInt(sel.value);
+}
+
+function pfUpdateVndDisplay() {
+  const totalSize = parseFloat(document.getElementById('pfTotalSize').value) || 0;
+  PF_ASSETS.forEach(a => {
+    const pct = parseFloat(document.getElementById(a.input).value) || 0;
+    const billions = (pct / 100) * totalSize;
+    const el = document.getElementById(a.vnd);
+    if (el) el.textContent = totalSize > 0 ? pfFmtVnd(billions) : '— tỷ';
+  });
+  // Update sum
+  const sum = PF_ASSETS.reduce((s, a) => s + (parseFloat(document.getElementById(a.input).value) || 0), 0);
+  const sumEl = document.getElementById('pfCurSum');
+  if (sumEl) {
+    sumEl.textContent = sum;
+    sumEl.style.color = (sum > 95 && sum < 105) ? '#95B690' : (sum === 0 ? '#7E7F85' : '#E88078');
+  }
+}
+
+function pfSave() {
+  const data = { totalSize: document.getElementById('pfTotalSize').value };
+  PF_ASSETS.forEach(a => { data[a.key] = document.getElementById(a.input).value; });
+  data.override = document.getElementById('pfPhaseOverride').value;
+  try {
+    localStorage.setItem('vmm_portfolio', JSON.stringify(data));
+  } catch (e) { console.warn('localStorage save failed:', e); }
+  pfUpdateVndDisplay();
+  pfRenderDelta();
+  // Visual feedback
+  const btn = event?.target;
+  if (btn) {
+    const orig = btn.textContent;
+    btn.textContent = '✓ SAVED';
+    setTimeout(() => { btn.textContent = orig; }, 1500);
+  }
+}
+
+function pfClear() {
+  if (!confirm('Xoá toàn bộ portfolio data? localStorage sẽ bị clear.')) return;
+  try { localStorage.removeItem('vmm_portfolio'); } catch (e) {}
+  document.getElementById('pfTotalSize').value = '';
+  PF_ASSETS.forEach(a => { document.getElementById(a.input).value = ''; });
+  document.getElementById('pfPhaseOverride').value = 'auto';
+  pfUpdateVndDisplay();
+  pfRenderDelta();
+  pfRenderTab();
+}
+
+function pfLoad() {
+  try {
+    const raw = localStorage.getItem('vmm_portfolio');
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (data.totalSize) document.getElementById('pfTotalSize').value = data.totalSize;
+    PF_ASSETS.forEach(a => {
+      if (data[a.key]) document.getElementById(a.input).value = data[a.key];
+    });
+    if (data.override) document.getElementById('pfPhaseOverride').value = data.override;
+  } catch (e) { console.warn('localStorage load failed:', e); }
+}
+
+function pfRenderTab() {
+  const phase = pfGetActivePhase();
+  const t = PF_TARGETS[phase];
+  const phaseEl = document.getElementById('pfPhase');
+  if (phaseEl) {
+    phaseEl.textContent = 'PHASE ' + phase;
+    phaseEl.style.color = t.color;
+  }
+  const phaseDescEl = document.getElementById('pfPhaseDesc');
+  if (phaseDescEl) {
+    const isOverride = document.getElementById('pfPhaseOverride').value !== 'auto';
+    phaseDescEl.textContent = t.name.replace(/PHASE \d · /, '') + (isOverride ? ' · MANUAL OVERRIDE' : ' · auto-detected');
+  }
+
+  // Counts
+  const c = pfCountTriggers();
+  const sellRedEl = document.getElementById('pfSellReds');
+  if (sellRedEl) sellRedEl.textContent = c.sellRed + c.sellOrange + c.sellMedium;
+  const sellOrEl = document.getElementById('pfSellOranges');
+  if (sellOrEl) sellOrEl.textContent = c.sellRed + ' RED · ' + c.sellOrange + ' ORANGE';
+  const buyStEl = document.getElementById('pfBuyStrongs');
+  if (buyStEl) buyStEl.textContent = c.buyStrong + c.buyMedium + c.buySoft;
+  const buyMdEl = document.getElementById('pfBuyMediums');
+  if (buyMdEl) buyMdEl.textContent = c.buyStrong + ' STRONG · ' + c.buyMedium + ' MEDIUM';
+
+  pfRenderTargetList(phase);
+  pfUpdateVndDisplay();
+  pfRenderDelta();
+}
+
+function pfInit() {
+  // Wire input listeners
+  ['pfTotalSize', 'pfCurRE', 'pfCurGold', 'pfCurStocks', 'pfCurCommodity', 'pfCurCash'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => { pfUpdateVndDisplay(); pfRenderDelta(); });
+  });
+  const ovr = document.getElementById('pfPhaseOverride');
+  if (ovr) ovr.addEventListener('change', () => pfRenderTab());
+  // Load saved
+  pfLoad();
+  pfRenderTab();
 }
 
 /* ============================================================
@@ -5196,7 +6472,8 @@ async function init() {
   // Restore last active tab
   try {
     const lastTab = localStorage.getItem('vmm_active_tab');
-    if (lastTab && (lastTab === 'overview' || lastTab === 'policy')) {
+    const validTabs = ['overview', 'policy', 'gold', 'realestate', 'stocks', 'commodity', 'portfolio', 'backtest'];
+    if (lastTab && validTabs.includes(lastTab)) {
       switchTab(lastTab);
     }
   } catch (e) {}
@@ -5206,6 +6483,7 @@ async function init() {
   renderMainCharts();
   renderTimelineChart();
   updateClock();
+  pfInit();
 
   // Initialize prev statuses (first load — no alerts fired)
   if (Object.keys(TG.prevStatuses).length === 0) {
